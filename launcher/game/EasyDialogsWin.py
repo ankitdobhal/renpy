@@ -1066,6 +1066,7 @@ def test():
         bar.label("Done.")
         time.sleep(1.0)     # give'em a chance to see "Done."
     finally:
+        del bar
         if hasattr(MacOS, 'SchedParams'):
             MacOS.SchedParams(*appsw)
 

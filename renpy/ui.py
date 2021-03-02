@@ -530,6 +530,8 @@ class Wrapper(renpy.object.Object):
 
             if tb.tb_next is None:
                 e.args = (e.args[0].replace("__call__", "ui." + self.name), )
+
+            del tb  # Important! Prevents memory leaks via our frame.
             raise
 
         main = w._main or w
