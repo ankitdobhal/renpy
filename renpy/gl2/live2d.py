@@ -235,7 +235,7 @@ class Live2DCommon(object):
         walk_json_files(self.model_json["FileReferences"].get("Expressions", { }), expression_files)
 
         # A list of attributes that are known.
-        self.attributes = set([ "still", "null" ])
+        self.attributes = {"still", "null"}
 
         # A map from a motion name to a motion identifier.
         self.motions = { "still" : renpy.gl2.live2dmotion.NullMotion() }
