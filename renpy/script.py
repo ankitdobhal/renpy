@@ -601,9 +601,6 @@ class Script(object):
                 old_data, old_stmts = loads(bindata)
 
                 self.merge_names(old_stmts, stmts)
-
-                del old_data
-                del old_stmts
             except:
                 pass
             finally:

@@ -1967,7 +1967,7 @@ class Interface(object):
         self.touch = renpy.exports.variant("touch")
 
         # Should we use the touch keyboard?
-        self.touch_keyboard = (self.touch and renpy.emscripten) or renpy.config.touch_keyboard
+        self.touch_keyboard = renpy.emscripten if self.touch else renpy.config.touch_keyboard
 
         # Should we restart the interaction?
         self.restart_interaction = True
@@ -3460,8 +3460,6 @@ class Interface(object):
 
         for i in renpy.display.emulator.overlay:
             root_widget.add(i)
-
-        del add_layer
 
         self.prediction_coroutine = renpy.display.predict.prediction_coroutine(root_widget)
         self.prediction_coroutine.send(None)

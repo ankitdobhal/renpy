@@ -1573,7 +1573,7 @@ LiveCrop = Crop
 
 class Side(Container):
 
-    possible_positions = set([ 'tl', 't', 'tr', 'r', 'br', 'b', 'bl', 'l', 'c'])
+    possible_positions = {'tl', 't', 'tr', 'r', 'br', 'b', 'bl', 'l', 'c'}
 
     def after_setstate(self):
         self.sized = False
